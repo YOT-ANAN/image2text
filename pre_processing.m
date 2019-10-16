@@ -9,7 +9,7 @@ im=imread(imfile);
 gim=rgb2gray(im);
 
 % Adaptive Threshoding
-thresh=10];
+thresh=10;
 adaptive_bim=bradley(gim, [15 15], thresh);
 
 % Out Adaptive Threshoding
