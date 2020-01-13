@@ -13,6 +13,7 @@ classdef AdaptiveTMethod < PreProcessing
           obj.imOut=[];
           obj.process();
           obj.imWriteOut();
+          
         end
     end
     methods (Access = protected )

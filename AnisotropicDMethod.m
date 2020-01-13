@@ -6,7 +6,7 @@ classdef AnisotropicDMethod < PreProcessing
         option = 0;
     end
     methods
-        function obj = AnisotropucDMethod(imName,imIn)
+        function obj = AnisotropicDMethod(imName,imIn)
           obj.imName = imName;
           obj.imIn=imIn;
           obj.imOut=[];
@@ -20,12 +20,13 @@ classdef AnisotropicDMethod < PreProcessing
           obj.process();
           obj.imWriteOut();
           
+
         end
     end
     methods (Access = protected )
         function process(obj)
-            anisoGim = anisodiff(adaptive_bim,obj.num_iter,obj.delta_t,obj.kappa,obj.option);
-            obj.imOut = imbinarize(anisoGim);
+            aniso_gim = anisodiff(obj.imIn,obj.num_iter,obj.delta_t,obj.kappa,obj.option);
+            obj.imOut = imbinarize(aniso_gim);
         end
     end
 end

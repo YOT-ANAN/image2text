@@ -3,7 +3,7 @@ close all;
 
 disp('Preprocessing image please wait . . .');
 
-imfile='image01.jpg';
+imfile='./image_input/image01.jpg';
 im=imread(imfile);
 [im_path, im_name, im_ext]=fileparts(imfile);
 gim=rgb2gray(im);
@@ -24,7 +24,7 @@ delta_t = 1/15;
 kappa = 1;
 option = 1;
 aniso_gim = anisodiff(adaptive_bim,num_iter,delta_t,kappa,option);
-aniso_bim = im2bw(aniso_gim);
+aniso_bim = imbinarize(aniso_gim);
 
 % Out Anisotropic
 figure(2), imshow(aniso_bim), title('Anisotropic opening image');
