@@ -27,6 +27,8 @@ classdef AnisotropicDMethod < PreProcessing
         function process(obj)
             aniso_gim = anisodiff(obj.imIn,obj.num_iter,obj.delta_t,obj.kappa,obj.option);
             obj.imOut = imbinarize(aniso_gim);
+            obj.imOut = im2uint8(obj.imOut);
+            
         end
     end
 end

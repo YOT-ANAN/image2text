@@ -26,6 +26,8 @@ option = 1;
 aniso_gim = anisodiff(adaptive_bim,num_iter,delta_t,kappa,option);
 aniso_bim = imbinarize(aniso_gim);
 
+
+
 % Out Anisotropic
 figure(2), imshow(aniso_bim), title('Anisotropic opening image');
 dst_folder = './image_anisotropic/';
