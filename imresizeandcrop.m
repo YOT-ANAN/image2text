@@ -16,8 +16,8 @@ function new_im = imresizeandcrop(im)
     new_im = imcrop(im,r);
 
 
-    figure(1)
-    imshow(im)
-    figure(2)
-    imshow(new_im)
+%     figure(1)
+%     imshow(im)
+%     figure(2)
+%     imshow(new_im)
 end

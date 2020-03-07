@@ -25,11 +25,15 @@ ramp=['@@@@@@@######MMMBBHHHAAAA&&GGhh9933XXX222255SSSiiiissssrrrrrrr;;;;;;;;:::
 
 
 im=imIn;
+size(imIn)
 % im=imread(imfile);
 im=mean(im,3);
 
 
 dst_folder = '.\output_textfile\';
+ if ~exist(dst_folder, 'dir')
+     mkdir(dst_folder)
+ end
 im_outname = [dst_folder,imName,'.txt']
 fid=fopen(im_outname,'w');
 % stepx=1;
@@ -37,7 +41,11 @@ stepx=1;
 % if length(varargin)>0,
 %   stepx=varargin{1};
 % end
+
 stepy=2*stepx;
+
+%stepx and stepy is character / stepx*stepy*2 pixel
+
 sizx=fix(size(im,2)/stepx);
 sizy=fix(size(im,1)/stepy);
 lumin=zeros(sizy,sizx);
