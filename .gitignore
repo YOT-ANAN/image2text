@@ -4,6 +4,7 @@
 ### MATLAB ###
 # Windows default autosave extension
 *.asv
+*.prj
 
 # OSX / *nix default autosave extension
 *.m~
